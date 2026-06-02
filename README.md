@@ -9,17 +9,18 @@
   <img src="https://img.shields.io/badge/scikit--image-HOG-yellow.svg" alt="scikit-image">
   <img src="https://img.shields.io/badge/NumPy-informational.svg" alt="NumPy">
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License">
+  <img src="https://img.shields.io/badge/status-academic%20project-lightgrey.svg" alt="Status">
 </p>
 
 -----
 
 ## Descripción general
 
-Este proyecto construye un sistema OCR completo para leer el contenido textual de los paneles azules de señalización de autopista. Partiendo de los paneles detectados en la [Práctica 1](https://github.com/joel-domene/Higway-Sign-Detection-OpenCV), el sistema localiza los caracteres individuales, los agrupa en líneas de texto y los reconoce mediante un clasificador entrenado.
+Este proyecto construye un sistema OCR completo para leer el contenido textual de los paneles azules de señalización de autopista. Partiendo de los paneles detectados en la [Detección de Paneles de Autopista por Vision Artificial](https://github.com/joel-domene/Higway-Sign-Detection-OpenCV), el sistema localiza los caracteres individuales, los agrupa en líneas de texto y los reconoce mediante un clasificador entrenado.
 
 El núcleo del proyecto es un **pipeline de machine learning clásico de extremo a extremo**: extracción de características → reducción de dimensionalidad → clasificación → evaluación rigurosa. Se entrena y valida un clasificador de caracteres, se comparan sistemáticamente varias combinaciones de características, reductores y clasificadores, y se aplica el mejor a la lectura de paneles reales, evaluando el resultado con la distancia de edición de Levenshtein.
 
-> **Contexto:** proyecto académico desarrollado **en equipo de 3 personas** como Práctica 2 de la asignatura Visión Artificial (URJC, curso 2025/26). Continúa la Práctica 1 (detección de paneles).
+> **Contexto:** proyecto académico desarrollado **en equipo de 3 personas** como práctica de la asignatura Visión Artificial (URJC). Continúa la práctica de detección de paneles.
 
 -----
 
@@ -135,8 +136,8 @@ Seleccionables con el parámetro `--classifier`:
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/joel-domene/Practica2.git
-cd Practica2
+git clone https://github.com/joel-domene/Highway-Panel-OCR.git
+cd Highway-Panel-OCR
 
 # 2. (Recomendado) Crear y activar un entorno virtual
 python -m venv .venv
@@ -144,15 +145,6 @@ source .venv/bin/activate      # En Windows: .venv\Scripts\activate
 
 # 3. Instalar dependencias
 pip install -r requirements.txt
-```
-
-Contenido de `requirements.txt`:
-
-```
-opencv-python
-numpy
-scikit-learn
-scikit-image
 ```
 
 -----
@@ -192,7 +184,7 @@ Entrenamiento: 625 imágenes/clase (38 750 en total). Validación: 15 500 imáge
 
 La mayoría de clases alcanzan F1 ≈ 1.0. El error residual se concentra en ambigüedades intrínsecas de caracteres aislados sin contexto de palabra: `O`/`o`/`0`, `I`/`l`/`1` y mayúscula vs. minúscula de igual forma (`V`/`v`, `W`/`w`).
 
-![Matriz de confusión del clasificador LDA + Normal Bayes sobre test_ocr](docs/matriz-confusion.png)
+![Matriz de confusión del clasificador LDA + Normal Bayes sobre test_ocr](docs/matriz-confusion.jpeg)
 
 *Matriz de confusión (lda_bayes, acc=0.961). La diagonal dominante refleja el alto acierto; los focos fuera de la diagonal corresponden a las confusiones de caso descritas.*
 
@@ -217,11 +209,11 @@ LDA + Normal Bayes y LDA + KNN son prácticamente equivalentes y los mejores. El
 |Distancia ≤ 5  |27/74 (36%)|
 |Distancia ≤ 10 |40/74 (54%)|
 
-![Histograma de la distancia de Levenshtein sobre 74 paneles](docs/histograma-levenshtein.png)
+![Histograma de la distancia de Levenshtein sobre 74 paneles](docs/histograma-levenshtein.jpeg)
 
 *Distribución del error de edición entre el texto reconocido y el real.*
 
-![Detección de caracteres y agrupación en líneas con RANSAC](docs/deteccion-caracteres-ransac.png)
+![Detección de caracteres y agrupación en líneas con RANSAC](docs/deteccion-caracteres-ransac.jpeg)
 
 *Detección de caracteres (verde) y líneas de texto agrupadas por RANSAC en un panel recortado.*
 
@@ -229,7 +221,7 @@ LDA + Normal Bayes y LDA + KNN son prácticamente equivalentes y los mejores. El
 
 Integración del detector MSER (P1) con el lector OCR (P2) sobre 102 imágenes de carretera (161 detecciones con texto). Ejemplos reales de lectura: `'TÚNEL DE LA ESCRITA'` → `'TUNELDE+LAEscRjTA'`; `'500m'` → `'5oom'`.
 
-![Sistema completo: detección de paneles y lectura de su contenido](docs/sistema-completo.png)
+![Sistema completo: detección de paneles y lectura de su contenido](docs/sistema-completo.jpeg)
 
 *Panel detectado (rojo) con su score, caracteres (verde), líneas de texto (cian) y texto OCR reconocido.*
 
@@ -275,18 +267,13 @@ Integración del detector MSER (P1) con el lector OCR (P2) sobre 102 imágenes d
 ## Contexto académico
 
 - **Asignatura:** Visión Artificial — Grado en Ingeniería de Computadores, Universidad Rey Juan Carlos (URJC).
-- **Curso:** 2025/26 — Práctica 2 grupal (continúa la Práctica 1).
-- **Peso:** 20% de la asignatura.
+- **Curso:** — Práctica grupal (continúa la [Detección de Paneles de Autopista por Vision Artificial](https://github.com/joel-domene/Higway-Sign-Detection-OpenCV)).
 
 -----
 
 ## Contribuidores
 
-Proyecto desarrollado en equipo, con contribución conjunta de los tres autores:
-
-- **Nicolás Wenceslao Muñoz Ciudad**
-- **Jorge Bernabé Molinero**
-- **Joel Domené Álvaro** · [GitHub](https://github.com/joel-domene)
+Proyecto desarrollado en equipo.
 
 -----
 
