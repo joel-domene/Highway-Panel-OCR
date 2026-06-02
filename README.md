@@ -266,7 +266,7 @@ Integración del detector MSER (P1) con el lector OCR (P2) sobre 102 imágenes d
 
 ## Contexto académico
 
-- **Asignatura:** Visión Artificial — Grado en Ingeniería de Computadores, Universidad Rey Juan Carlos (URJC).
+- **Asignatura:** Visión Artificial — Grado en Ingeniería Informática, Universidad Rey Juan Carlos (URJC).
 - **Curso:** — Práctica grupal (continúa la [Detección de Paneles de Autopista por Vision Artificial](https://github.com/joel-domene/Higway-Sign-Detection-OpenCV)).
 
 -----
