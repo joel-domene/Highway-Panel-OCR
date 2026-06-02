@@ -20,5 +20,5 @@ train_ocr/
 test_ocr/
 test_ocr_panels/
 
-# Salidas regenerables (descomenta si no quieres versionarlas)
+# Salidas regenerables (comentado ya que los tengo añadidos)
 # resultado.txt
