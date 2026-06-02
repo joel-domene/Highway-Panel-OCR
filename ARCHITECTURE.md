@@ -91,7 +91,7 @@ Distancia de Levenshtein contra `gt.txt`: 74 paneles, distancia media 10.1; ≤5
 
 ## 5. Ejercicio 4 — Sistema completo (detección P1 + OCR P2)
 
-`main.py` une el detector MSER de la Práctica 1 (`MSERBluePanelDetector`, en `detectors.py`) con el lector OCR. Por cada imagen de carretera, el detector devuelve las cajas de panel; cada panel se recorta y se pasa a `PanelReader.read_annotated()`, reutilizando íntegramente el pipeline del Ejercicio 3. El texto reconocido se escribe como octavo campo de `resultado.txt`:
+`main.py` une el detector MSER de la [Detección de Paneles de Autopista por Vision Artificial](https://github.com/joel-domene/Higway-Sign-Detection-OpenCV) (`MSERBluePanelDetector`, en `detectors.py`) con el lector OCR. Por cada imagen de carretera, el detector devuelve las cajas de panel; cada panel se recorta y se pasa a `PanelReader.read_annotated()`, reutilizando íntegramente el pipeline del Ejercicio 3. El texto reconocido se escribe como octavo campo de `resultado.txt`:
 
 ```
 nombre;x1;y1;x2;y2;1;score;texto_ocr
