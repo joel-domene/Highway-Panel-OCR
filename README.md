@@ -16,7 +16,7 @@
 
 ## Descripción general
 
-Este proyecto construye un sistema OCR completo para leer el contenido textual de los paneles azules de señalización de autopista. Partiendo de los paneles detectados en la [Detección de Paneles de Autopista por Vision Artificial](https://github.com/joel-domene/Higway-Sign-Detection-OpenCV), el sistema localiza los caracteres individuales, los agrupa en líneas de texto y los reconoce mediante un clasificador entrenado.
+Este proyecto construye un sistema OCR completo para leer el contenido textual de los paneles azules de señalización de autopista. Partiendo de los paneles detectados en la [Detección de Paneles de Autopista por Vision Artificial](https://github.com/joel-domene/Highway-Sign-Detection-OpenCV), el sistema localiza los caracteres individuales, los agrupa en líneas de texto y los reconoce mediante un clasificador entrenado.
 
 El núcleo del proyecto es un **pipeline de machine learning clásico de extremo a extremo**: extracción de características → reducción de dimensionalidad → clasificación → evaluación rigurosa. Se entrena y valida un clasificador de caracteres, se comparan sistemáticamente varias combinaciones de características, reductores y clasificadores, y se aplica el mejor a la lectura de paneles reales, evaluando el resultado con la distancia de edición de Levenshtein.
 
@@ -267,7 +267,7 @@ Integración del detector MSER (P1) con el lector OCR (P2) sobre 102 imágenes d
 ## Contexto académico
 
 - **Asignatura:** Visión Artificial — Grado en Ingeniería Informática, Universidad Rey Juan Carlos (URJC).
-- **Curso:** — Práctica grupal (continúa la [Detección de Paneles de Autopista por Vision Artificial](https://github.com/joel-domene/Higway-Sign-Detection-OpenCV)).
+- **Curso:** — Práctica grupal (continúa la [Detección de Paneles de Autopista por Vision Artificial](https://github.com/joel-domene/Highway-Sign-Detection-OpenCV)).
 
 -----
 
